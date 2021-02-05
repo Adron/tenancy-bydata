@@ -41,7 +41,7 @@ resource "azurerm_postgresql_firewall_rule" "pgfirewallrule" {
   end_ip_address      = "0.0.0.0"
 }
 
-resource "azurerm_container_group" "adronshasure" {
+resource "azurerm_container_group" "hasura" {
   name                = "adrons-hasura-logistics-data-layer"
   location            = azurerm_resource_group.controlrg.location
   resource_group_name = azurerm_resource_group.controlrg.name
@@ -95,5 +95,5 @@ variable "apiport" {
 }
 
 output "hasura_uri_path" {
-  value = "${azurerm_container_group.adronshasure.fqdn}:${var.apiport}"
+  value = "${azurerm_container_group.hasura.fqdn}:${var.apiport}"
 }
