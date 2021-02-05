@@ -12,8 +12,6 @@ This repository is an example of setting up multiple tenancy using a particular 
 
 ![Process for New Accounts](images/process-new-accounts.png)
 
-<div style="width: 640px; height: 480px; margin: 10px; position: relative;"><iframe allowfullscreen frameborder="0" style="width:640px; height:480px" src="https://lucid.app/documents/embeddedchart/8d23be7c-fc54-453c-85eb-c32afa7e46a1" id="YP..3EygUxrF"></iframe></div>
-
 ## Development Setup
 
 **NOTE:** During dev I'm using the env vars in IntelliJ IDEA. Of course, store your envs anywhere you want for dev, this is just a suggestion/reminder to myself.
