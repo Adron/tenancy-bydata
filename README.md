@@ -14,11 +14,11 @@ This repository is an example of setting up multiple tenancy using a particular 
 
 ## Development Setup
 
-> Prerequisites
+***Prerequisites***
 
 1. Azure Account 
-* Terraform 
-* Azure CLI
+2. Terraform 
+3. Azure CLI
 
 Set the following environment variables for root:
 
