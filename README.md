@@ -14,7 +14,11 @@ This repository is an example of setting up multiple tenancy using a particular 
 
 ## Development Setup
 
-**NOTE:** During dev I'm using the env vars in IntelliJ IDEA. Of course, store your envs anywhere you want for dev, this is just a suggestion/reminder to myself.
+> Prerequisites
+
+1. Azure Account 
+* Terraform 
+* Azure CLI
 
 Set the following environment variables for root:
 
