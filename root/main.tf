@@ -1,6 +1,5 @@
 provider "azurerm" {
-  version = "=2.20.0"
-  features {}
+    features {}
 }
 
 resource "azurerm_resource_group" "controlrg" {
@@ -42,11 +41,11 @@ resource "azurerm_postgresql_firewall_rule" "pgfirewallrule" {
 }
 
 resource "azurerm_container_group" "hasura" {
-  name                = "adrons-hasura-logistics-data-layer"
+  name                = "hasura-api-layer"
   location            = azurerm_resource_group.controlrg.location
   resource_group_name = azurerm_resource_group.controlrg.name
   ip_address_type     = "public"
-  dns_name_label      = "logisticsdatalayer"
+  dns_name_label      = "control"
   os_type             = "Linux"
 
   container {
@@ -62,7 +61,7 @@ resource "azurerm_container_group" "hasura" {
 
     environment_variables = {
       HASURA_GRAPHQL_SERVER_PORT    = var.apiport
-      HASURA_GRAPHQL_ENABLE_CONSOLE = true
+      HASURA_GRAPHQL_ENABLE_CONSOLE = false
     }
     secure_environment_variables = {
       HASURA_GRAPHQL_DATABASE_URL = "postgres://${var.username}%40${azurerm_postgresql_server.unionstation.name}:${var.password}@${azurerm_postgresql_server.unionstation.fqdn}:5432/${var.database}"

@@ -18,17 +18,18 @@ This repository is an example of setting up multiple tenancy using a particular 
 
 Set the following environment variables for root:
 
+* systemicorganization = The name of the control organization.
 * DBUN = Database Username
 * DBPW = Database Password
 
 Set these parameters/variables for every new account setup:
 
 * server = The server database for the new account
-
-* r 'server='$server'' \
-  -var 'username='$username'' \
-  -var 'password='$password'' \
-  -var 'database='$database'' \
+* username = The account owner's username.
+* password = The account owner's password.
+* organization = The organization that owns the account. This will also be the default preface for names and other elements of the apps. 
+* database = The specific database that the account will be assigned to.
+* apps = The list of applications the user will have access to or is specifically signing up for. This will determine which set of tables need to be added to the database.
   
 ## Reference Material
 
