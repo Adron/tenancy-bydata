@@ -4,3 +4,8 @@ terraform destroy \
   -var 'password='$PPW'' \
   -var 'database="control"' \
   -var 'apiport=8080'
+
+cd hasura
+
+rm -rf config.yaml
+cp config-backup.yaml config.yaml
