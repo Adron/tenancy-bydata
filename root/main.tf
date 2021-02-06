@@ -61,7 +61,7 @@ resource "azurerm_container_group" "hasura" {
 
     environment_variables = {
       HASURA_GRAPHQL_SERVER_PORT    = var.apiport
-      HASURA_GRAPHQL_ENABLE_CONSOLE = false
+      HASURA_GRAPHQL_ENABLE_CONSOLE = true
     }
     secure_environment_variables = {
       HASURA_GRAPHQL_DATABASE_URL = "postgres://${var.username}%40${azurerm_postgresql_server.unionstation.name}:${var.password}@${azurerm_postgresql_server.unionstation.fqdn}:5432/${var.database}"
