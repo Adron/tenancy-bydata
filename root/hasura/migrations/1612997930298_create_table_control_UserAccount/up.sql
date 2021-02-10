@@ -1,0 +1,1 @@
+CREATE TABLE "control"."UserAccount"("AccountId" uuid NOT NULL, "UserId" uuid NOT NULL, "Details" text NOT NULL, PRIMARY KEY ("AccountId","UserId") , FOREIGN KEY ("UserId") REFERENCES "control"."User"("Id") ON UPDATE restrict ON DELETE restrict, FOREIGN KEY ("AccountId") REFERENCES "control"."Account"("Id") ON UPDATE restrict ON DELETE restrict);
