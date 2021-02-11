@@ -15,6 +15,10 @@ if [ $DBUN != "" ] && [ $DBPW != "" ] ; then
     -u $(terraform output hasura_uri_path) \
     -p "./hasura/config.yaml"
 
+  cd hasura
+
+  hasura migrate apply
+
 else
 
   echo "Set the value for DBUN environment variable, it is currently undefined."
