@@ -19,6 +19,8 @@ if [ $DBUN != "" ] && [ $DBPW != "" ] ; then
 
   hasura migrate apply
 
+  hasura console
+
 else
 
   echo "Set the value for DBUN environment variable, it is currently undefined."

@@ -1,4 +1,11 @@
-terraform destroy \
+terraform destroy -auto-approve  \
+  -var 'server="unionstation"' \
+  -var 'username='$PUN'' \
+  -var 'password='$PPW'' \
+  -var 'database="control"' \
+  -var 'apiport=8080'
+
+terraform destroy -auto-approve  \
   -var 'server="unionstation"' \
   -var 'username='$PUN'' \
   -var 'password='$PPW'' \
