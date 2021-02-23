@@ -19,6 +19,11 @@ if [ $DBUN != "" ] && [ $DBPW != "" ] ; then
 
   hasura migrate apply
 
+  # Note: The metadata file, is currently a manually exported metadata file located in the metadata directory.
+  # If further updates to the migrations are made this will make the metadata out of sync and another export will
+  # need to be made. Currently the hasura metadata export command could suffice, but it currently doesn't work.
+  hasura metadata apply --from-file
+
   hasura console
 
 else
