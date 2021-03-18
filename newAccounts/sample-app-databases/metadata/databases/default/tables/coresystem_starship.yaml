@@ -1,0 +1,11 @@
+array_relationships:
+- name: starship_messages
+  using:
+    foreign_key_constraint_on:
+      column: id
+      table:
+        name: starship_messages
+        schema: coresystem
+table:
+  name: starship
+  schema: coresystem

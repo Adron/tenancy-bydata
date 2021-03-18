@@ -1,0 +1,7 @@
+- "!include coresystem_cruise.yaml"
+- "!include coresystem_starship.yaml"
+- "!include coresystem_starship_messages.yaml"
+- "!include starships_cruise.yaml"
+- "!include starships_starship.yaml"
+- "!include starships_starship_cruise.yaml"
+- "!include starships_starship_message_log.yaml"

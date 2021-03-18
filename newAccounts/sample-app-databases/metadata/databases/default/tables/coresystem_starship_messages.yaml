@@ -1,0 +1,21 @@
+object_relationships:
+- name: starship
+  using:
+    foreign_key_constraint_on: id
+remote_relationships:
+- definition:
+    hasura_fields:
+    - snap
+    - delta
+    - stamp
+    remote_field:
+      Messages_by_pk:
+        arguments:
+          message_delta: $delta
+          message_snap: $snap
+          message_stamp: $stamp
+    remote_schema: shipboard_messages
+  name: starship_messages
+table:
+  name: starship_messages
+  schema: coresystem
