@@ -1,0 +1,22 @@
+array_relationships:
+- name: carts
+  using:
+    foreign_key_constraint_on:
+      column: item_list_id
+      table:
+        name: cart
+        schema: ecommerce
+- name: orders
+  using:
+    foreign_key_constraint_on:
+      column: item_list_id
+      table:
+        name: order
+        schema: ecommerce
+object_relationships:
+- name: item
+  using:
+    foreign_key_constraint_on: item_id
+table:
+  name: item_list
+  schema: ecommerce

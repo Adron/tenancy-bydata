@@ -1,0 +1,18 @@
+array_relationships:
+- name: shippeds
+  using:
+    foreign_key_constraint_on:
+      column: address_id
+      table:
+        name: shipped
+        schema: ecommerce
+- name: user_addresses
+  using:
+    foreign_key_constraint_on:
+      column: address_id
+      table:
+        name: user_address
+        schema: ecommerce
+table:
+  name: address
+  schema: ecommerce

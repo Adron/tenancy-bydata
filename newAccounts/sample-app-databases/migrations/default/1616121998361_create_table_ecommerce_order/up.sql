@@ -1,0 +1,2 @@
+CREATE TABLE "ecommerce"."order" ("id" uuid NOT NULL DEFAULT gen_random_uuid(), "user_id" UUID NOT NULL, "item_list_id" uuid NOT NULL, "stamp" timestamptz NOT NULL DEFAULT now(), "cost" numeric NOT NULL, "total" numeric NOT NULL, "shipping" numeric NOT NULL, PRIMARY KEY ("id") , FOREIGN KEY ("user_id") REFERENCES "ecommerce"."user"("id") ON UPDATE restrict ON DELETE restrict, UNIQUE ("id"));
+CREATE EXTENSION IF NOT EXISTS pgcrypto;

@@ -1,3 +1,11 @@
+array_relationships:
+- name: starship_cruises
+  using:
+    foreign_key_constraint_on:
+      column: starship_id
+      table:
+        name: starship_cruise
+        schema: starships
 table:
   name: starship
   schema: starships
