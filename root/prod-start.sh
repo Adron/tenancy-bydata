@@ -17,7 +17,7 @@ if [ $DBUN != "" ] && [ $DBPW != "" ] ; then
 
   cd hasura
 
-  hasura migrate apply
+  hasura migrate apply --database-name default
 
   # Note: The metadata file, is currently a manually exported metadata file located in the metadata directory.
   # If further updates to the migrations are made this will make the metadata out of sync and another export will
