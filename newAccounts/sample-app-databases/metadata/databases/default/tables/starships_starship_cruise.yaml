@@ -1,3 +1,10 @@
+object_relationships:
+- name: cruise
+  using:
+    foreign_key_constraint_on: cruise_id
+- name: starship
+  using:
+    foreign_key_constraint_on: starship_id
 table:
   name: starship_cruise
   schema: starships

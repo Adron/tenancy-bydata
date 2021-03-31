@@ -24,6 +24,14 @@ resource "azurerm_postgresql_server" "unionstation" {
   ssl_enforcement_enabled      = true
 }
 
+resource "azurerm_postgresql_database" "metadata" {
+  name                = var.database
+  resource_group_name = azurerm_resource_group.controlrg.name
+  server_name         = azurerm_postgresql_server.unionstation.name
+  charset             = "UTF8"
+  collation           = "English_United States.1252"
+}
+
 resource "azurerm_postgresql_database" "controldb" {
   name                = var.database
   resource_group_name = azurerm_resource_group.controlrg.name
@@ -64,7 +72,9 @@ resource "azurerm_container_group" "hasura" {
       HASURA_GRAPHQL_ENABLE_CONSOLE = false
     }
     secure_environment_variables = {
+      
       HASURA_GRAPHQL_DATABASE_URL = "postgres://${var.username}%40${azurerm_postgresql_server.unionstation.name}:${var.password}@${azurerm_postgresql_server.unionstation.fqdn}:5432/${var.database}"
+
     }
   }
 

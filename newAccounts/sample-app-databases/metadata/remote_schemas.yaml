@@ -1,4 +1,1 @@
-- name: shipboard_messages
-  definition:
-    url: https://external-apis.hasura.app/v1/graphql
-    timeout_seconds: 30
+[]
