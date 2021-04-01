@@ -1,0 +1,1 @@
+CREATE TABLE "applications"."applications" ("name" character varying NOT NULL DEFAULT gen_random_uuid(), "description" text, "active" boolean NOT NULL DEFAULT false, "stamp" timestamptz NOT NULL DEFAULT now(), PRIMARY KEY ("name") , UNIQUE ("name"), UNIQUE ("description"));COMMENT ON TABLE "applications".applications IS E'The applications available in the system.';
