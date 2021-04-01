@@ -1,0 +1,2 @@
+insert into control.applications (name, description) values ('Simply To Do', 'A simple to do application.');
+insert into control.applications (name, description) values ('Easy Meet', 'A simple group meet application.');

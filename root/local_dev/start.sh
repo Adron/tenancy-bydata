@@ -12,6 +12,7 @@ terraform apply -auto-approve \
 
 cd ../hasura
 
-hasura migrate apply
-
+hasura migrate apply --admin-secret myadminsecretkey
+hasura metadata apply --admin-secret myadminsecretkey
+hasura seeds apply --admin-secret myadminsecretkey
 hasura console --admin-secret myadminsecretkey

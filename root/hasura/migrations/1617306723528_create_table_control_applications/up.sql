@@ -1,0 +1,1 @@
+CREATE TABLE "control"."applications" ("name" varchar NOT NULL, "stamp" timestamptz NOT NULL DEFAULT now(), "available" boolean NOT NULL DEFAULT false, "description" text, PRIMARY KEY ("name") , UNIQUE ("name"));COMMENT ON TABLE "control".applications IS E'System applications.';

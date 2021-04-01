@@ -1,98 +1,21 @@
 - table:
-    schema: applications
+    schema: accounts
+    name: accounts
+  array_relationships:
+  - name: applications
+    using:
+      foreign_key_constraint_on:
+        column: account_id
+        table:
+          schema: accounts
+          name: applications
+- table:
+    schema: accounts
     name: applications
-- table:
-    schema: control
-    name: Account
-  array_relationships:
-  - name: UserAccounts
-    using:
-      foreign_key_constraint_on:
-        column: AccountId
-        table:
-          schema: control
-          name: UserAccount
-- table:
-    schema: control
-    name: AccountApplications
-- table:
-    schema: control
-    name: AppUser
-  array_relationships:
-  - name: ApplicationUsers
-    using:
-      foreign_key_constraint_on:
-        column: AppUserId
-        table:
-          schema: control
-          name: ApplicationUsers
-- table:
-    schema: control
-    name: Application
-  array_relationships:
-  - name: ApplicationUsers
-    using:
-      foreign_key_constraint_on:
-        column: ApplicationId
-        table:
-          schema: control
-          name: ApplicationUsers
-- table:
-    schema: control
-    name: ApplicationUsers
   object_relationships:
-  - name: AppUser
+  - name: account
     using:
-      foreign_key_constraint_on: AppUserId
-  - name: Application
-    using:
-      foreign_key_constraint_on: ApplicationId
+      foreign_key_constraint_on: account_id
 - table:
     schema: control
-    name: Role
-  array_relationships:
-  - name: UserRoles
-    using:
-      foreign_key_constraint_on:
-        column: RoleId
-        table:
-          schema: control
-          name: UserRole
-- table:
-    schema: control
-    name: User
-  array_relationships:
-  - name: UserAccounts
-    using:
-      foreign_key_constraint_on:
-        column: UserId
-        table:
-          schema: control
-          name: UserAccount
-  - name: UserRoles
-    using:
-      foreign_key_constraint_on:
-        column: UserId
-        table:
-          schema: control
-          name: UserRole
-- table:
-    schema: control
-    name: UserAccount
-  object_relationships:
-  - name: Account
-    using:
-      foreign_key_constraint_on: AccountId
-  - name: User
-    using:
-      foreign_key_constraint_on: UserId
-- table:
-    schema: control
-    name: UserRole
-  object_relationships:
-  - name: Role
-    using:
-      foreign_key_constraint_on: RoleId
-  - name: User
-    using:
-      foreign_key_constraint_on: UserId
+    name: applications
