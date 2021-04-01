@@ -16,6 +16,8 @@ This repository is an example of setting up multiple tenancy using a particular 
 
 ***Prerequisites***
 
+### For Cloud Deploy
+
 1. [Azure Account](https://azure.microsoft.com/en-us/) 
 2. [Terraform](https://www.terraform.io/) 
 3. [Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli)
@@ -28,6 +30,12 @@ Set the following environment variables for root:
 * systemicorganization = The name of the control organization.
 * DBUN = Database Username
 * DBPW = Database Password
+
+### For Local Development
+
+
+
+### Additional Parameters
 
 Set these parameters/variables for every new account setup:
 

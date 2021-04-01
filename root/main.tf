@@ -70,6 +70,9 @@ resource "azurerm_container_group" "hasura" {
     environment_variables = {
       HASURA_GRAPHQL_SERVER_PORT    = var.apiport
       HASURA_GRAPHQL_ENABLE_CONSOLE = false
+      HASURA_GRAPHQL_DEV_MODE = false
+      HASURA_GRAPHQL_ENABLED_LOG_TYPES = startup, http-log, webhook-log, websocket-log, query-log
+      HASURA_GRAPHQL_ADMIN_SECRET = ${var.password}
     }
     secure_environment_variables = {
       
