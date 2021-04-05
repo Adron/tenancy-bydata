@@ -11,20 +11,19 @@ if [ $DBUN != "" ] && [ $DBPW != "" ] ; then
     -var 'database=control' \
     -var 'apiport=8080'
 
-  arbitures mutate hasurafig \
-    -u $(terraform output hasura_uri_path) \
-    -p "./hasura/config.yaml"
+  URIPATH=`echo $(terraform output hasura_uri_path) | tr -d '"'`
+  $URIPATH > current_hasura_uri_path.txt
 
   cd hasura
 
-  hasura migrate apply --database-name default
+  hasura migrate apply --database-name default --admin-secret $DBPW --endpoint $URIPATH
 
   # Note: The metadata file, is currently a manually exported metadata file located in the metadata directory.
   # If further updates to the migrations are made this will make the metadata out of sync and another export will
   # need to be made. Currently the hasura metadata export command could suffice, but it currently doesn't work.
-  hasura metadata apply --from-file
+  hasura metadata apply --from-file --admin-secret $DBPW --endpoint $URIPATH
 
-  hasura console
+  hasura console --admin-secret $DBPW --endpoint $URIPATH
 
 else
 
