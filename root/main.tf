@@ -58,7 +58,7 @@ resource "azurerm_container_group" "hasura" {
 
   container {
     name   = "hasura-data-layer"
-    image  = "hasura/graphql-engine:v2.0.0-alpha.6"
+    image  = "hasura/graphql-engine:v2.0.0-beta.1"
     cpu    = "0.5"
     memory = "1.5"
 
@@ -72,12 +72,10 @@ resource "azurerm_container_group" "hasura" {
       HASURA_GRAPHQL_ENABLE_CONSOLE = false
       HASURA_GRAPHQL_DEV_MODE = false
       HASURA_GRAPHQL_ENABLED_LOG_TYPES = "startup, http-log, webhook-log, websocket-log, query-log"
-      HASURA_GRAPHQL_ADMIN_SECRET = var.password
     }
     secure_environment_variables = {
-      
       HASURA_GRAPHQL_DATABASE_URL = "postgres://${var.username}%40${azurerm_postgresql_server.unionstation.name}:${var.password}@${azurerm_postgresql_server.unionstation.fqdn}:5432/${var.database}"
-
+      HASURA_GRAPHQL_ADMIN_SECRET = var.password
     }
   }
 
