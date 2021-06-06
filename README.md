@@ -8,7 +8,7 @@ This repository is an example of setting up multiple tenancy using a particular 
 
 ### Architecture - Root System
 
-### Architecture - New Account Systems
+### Architecture - Sample App Systems
 
 ![Process for New Accounts](images/process-new-accounts.png)
 

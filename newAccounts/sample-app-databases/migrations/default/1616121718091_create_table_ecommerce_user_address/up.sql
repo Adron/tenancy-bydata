@@ -1,1 +1,0 @@
-CREATE TABLE "ecommerce"."user_address" ("user_id" uuid NOT NULL, "address_id" uuid NOT NULL, PRIMARY KEY ("user_id","address_id") , FOREIGN KEY ("address_id") REFERENCES "ecommerce"."address"("id") ON UPDATE restrict ON DELETE restrict, FOREIGN KEY ("user_id") REFERENCES "ecommerce"."user"("id") ON UPDATE restrict ON DELETE restrict);

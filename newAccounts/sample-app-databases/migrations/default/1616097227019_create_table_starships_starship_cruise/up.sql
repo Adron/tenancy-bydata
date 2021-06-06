@@ -1,1 +1,0 @@
-CREATE TABLE "starships"."starship_cruise" ("starship_id" uuid NOT NULL, "cruise_id" uuid NOT NULL, PRIMARY KEY ("starship_id","cruise_id") , FOREIGN KEY ("cruise_id") REFERENCES "starships"."cruise"("id") ON UPDATE restrict ON DELETE restrict, FOREIGN KEY ("starship_id") REFERENCES "starships"."starship"("id") ON UPDATE restrict ON DELETE restrict);

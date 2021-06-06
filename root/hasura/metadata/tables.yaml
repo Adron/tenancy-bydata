@@ -1,1 +1,12 @@
-[]
+- table:
+    schema: system_core
+    name: core_apps
+- table:
+    schema: system_core
+    name: organizations
+- table:
+    schema: system_core
+    name: user_apps
+- table:
+    schema: system_core
+    name: users
